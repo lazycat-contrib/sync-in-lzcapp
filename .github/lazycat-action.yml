@@ -1,0 +1,21 @@
+update:
+  version_source:
+    type: image
+    image: syncin-server
+  require_digest_match: true
+build:
+  toolchains:
+    - kind: docker
+images:
+  - id: syncin-server
+    image: syncin/server
+    target: service
+    tag_regex: ^v?[0-9]+[.][0-9]+[.][0-9]+$
+  - id: mariadb
+    image: library/mariadb
+    target: service
+    channel: custom
+    sort: semver
+    tag_regex: ^11[.][0-9]+[.][0-9]+$
+    version_regex: ^(?P<version>11[.][0-9]+[.][0-9]+)$
+    version_template: "{version}"

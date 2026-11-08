@@ -1,0 +1,45 @@
+params:
+  - id: si_db
+    type: secret
+    name: "数据库 root 密码"
+    description: "MariaDB root 密码（已预置随机值，应用自动使用）"
+    default_value: "kW7mVx2qP9nRtZ4s"
+    optional: false
+  - id: si_tok_access
+    type: secret
+    name: "访问令牌密钥"
+    description: "JWT access token 签名密钥（已预置随机值，应用自动使用）"
+    default_value: "hR3nB8wKv5cXyT2m"
+    optional: false
+  - id: si_tok_refresh
+    type: secret
+    name: "刷新令牌密钥"
+    description: "JWT refresh token 签名密钥（已预置随机值，应用自动使用）"
+    default_value: "pQ6yG4nJc8vLwD9s"
+    optional: false
+  - id: si_mfa_key
+    type: secret
+    name: "MFA 加密密钥"
+    description: "两步验证密钥的静态加密密钥（已预置随机值，启用 MFA 后不可更改）"
+    default_value: "tF5xC9bHm3kQzR7v"
+    optional: false
+  - id: si_admin
+    type: secret
+    name: "管理员初始密码"
+    description: "首次启动自动创建的 admin 账号登录密码（已预置随机值，登录后请立即修改）"
+    default_value: "jN8sW3qKx6vBmT5r"
+    optional: false
+
+locales:
+  zh:
+    si_db: {name: "数据库 root 密码", description: "MariaDB root 密码（已预置随机值，应用自动使用）"}
+    si_tok_access: {name: "访问令牌密钥", description: "JWT access token 签名密钥（已预置随机值，应用自动使用）"}
+    si_tok_refresh: {name: "刷新令牌密钥", description: "JWT refresh token 签名密钥（已预置随机值，应用自动使用）"}
+    si_mfa_key: {name: "MFA 加密密钥", description: "两步验证密钥的静态加密密钥（已预置随机值，启用 MFA 后不可更改）"}
+    si_admin: {name: "管理员初始密码", description: "首次启动自动创建的 admin 账号登录密码（已预置随机值，登录后请立即修改）"}
+  en:
+    si_db: {name: "Database root password", description: "MariaDB root password (pre-filled random value, used automatically)"}
+    si_tok_access: {name: "Access token secret", description: "JWT access token signing secret (pre-filled random value, used automatically)"}
+    si_tok_refresh: {name: "Refresh token secret", description: "JWT refresh token signing secret (pre-filled random value, used automatically)"}
+    si_mfa_key: {name: "MFA encryption key", description: "Static encryption key for MFA secrets (pre-filled random value; do not change after enabling MFA)"}
+    si_admin: {name: "Initial admin password", description: "Login password of the auto-created admin account on first start (pre-filled random value; change it after first login)"}
